@@ -1,0 +1,26 @@
+﻿<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+_spBodyOnLoadFunctions.push(function(){
+    $.ajax({
+        type: "GET",
+        url: "{replace with mvc site url}",
+        dataType: "jsonp",
+        crossDomain: true,
+        beforeSend: function () {
+            // Show loading animation
+
+        },
+        complete: function () {
+            // Hide loading animation
+
+        },
+        success: function (result) {
+            $("#documents").html(result.view);
+        },
+        error: function (xhr, status, error) {
+            $("#documents").html(error);
+        }
+    });
+});
+</script>
+<div id="documents"></div>
